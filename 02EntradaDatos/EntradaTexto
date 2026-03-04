@@ -1,0 +1,14 @@
+class EntradaTexto{
+    //metodo principal 
+    public static void 
+main(String[] args){
+        //las variables locales
+        String nombre;
+        //entrada
+
+System.out.println("Escribe tu nombre: ");
+    nombre= System.console().readLine();
+
+        System.out.println("Hola" + nombre + "Bienvenido a programar muy feo");
+    }
+}
