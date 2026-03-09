@@ -1,0 +1,111 @@
+
+/*
+    Vamos a realizar 14 programas dentrp de in menu gigante para poner a prubea sus conocimientos de algoritmia 
+    1.- Desarrolla un progrma para calcular el bono de un descuento por edad
+    2.- Conertir numeros decimales a binarios
+    3.- Convertir temperaturas entre los 3 principales grados C -> F y K 
+    4.- Realizar un programa para contar numero de positivos y negativos de una serie de numeros
+    5.- Desarrollar una tienda para agregrar productos y precios
+    6.- Desarrollar un programa para calclar el area y perimetro de 5 diferentes figuras
+    7.- Desarrollar una tabla avr de q se me ocurre
+    8.- Desarrollar un programa para calcular un factorial con recursividad
+    9.- Vamos a hacer dibujitos wiiii
+    10.- Desarrolla una figura hueca
+    11.- Realizar algunos patrones
+    12.- Realizar un diamante
+    13.- Desarrollar una calculadora basica + - * / 
+
+*/
+import java.util.Scanner;
+
+
+class EstructuraDatos {
+    public static void main(String[] args) {
+        
+     //aqui van las variables
+        int opcion;
+        Scanner entrada = new Scanner(System.in);
+        char letrarepetir;
+   // aqui van los objetos
+
+   // aqui va el menu
+    do {
+    System.out.println("1.- ");
+    System.out.println("2.- Converitr numeros binarios");
+    System.out.println("3.- ");
+    System.out.println("4.- ");
+    System.out.println("5.- ");
+    System.out.println("6.- ");
+    System.out.println("7.- ");
+    System.out.println("8.- ");
+    System.out.println("9.- ");
+    System.out.println("10.- ");
+    System.out.println("11.- ");
+    System.out.println("12.- ");
+    System.out.println("13.- ");
+    System.out.println("14.- Salir ");
+
+    opcion = entrada.nextInt();
+
+   // ahora tenemos que evaluar la entrada
+
+        switch (opcion){
+            case 1:
+                break;
+            case 2:
+                // convertir decimal a binario 
+                System.out.println("Ingrese un numero positivo entero que se desee convertir a binario");
+                int numbinario;
+                String guardarbinario ="";
+                numbinario = entrada.nextInt();
+
+                if(numbinario > 0){
+                // realizar mod 2
+                while( numbinario > 0){
+                if(numbinario%2 == 0){
+                    guardarbinario = "0" + guardarbinario;
+                }
+                else {
+                    guardarbinario = "1" + guardarbinario;
+                }
+                numbinario = (int)numbinario/2;
+            }
+        }else if(numbinario == 0){
+            guardarbinario = "0";
+        }else{
+            guardarbinario = "No se puede convertir ese numero, solo acepta positivos";
+        }
+        System.out.println("El numero convertido a binario es: " + guardarbinario);
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            default:
+                break;
+        }
+    System.out.println("Desas Repetir el programa escribe s o S para si");
+    letrarepetir = entrada.next().charAt
+    (0);
+    } while (letrarepetir == 's' || letrarepetir == 'S');
+}
+}
