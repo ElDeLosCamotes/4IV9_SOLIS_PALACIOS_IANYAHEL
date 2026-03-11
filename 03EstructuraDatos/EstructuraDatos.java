@@ -26,6 +26,7 @@ class EstructuraDatos {
         int opcion;
         Scanner entrada = new Scanner(System.in);
         char letrarepetir;
+        float compra = 0;
    // aqui van los objetos
 
    // aqui va el menu
@@ -34,7 +35,7 @@ class EstructuraDatos {
     System.out.println("2.- Converitr numeros binarios");
     System.out.println("3.- ");
     System.out.println("4.- ");
-    System.out.println("5.- ");
+    System.out.println("5.-Tienda Kawaii ");
     System.out.println("6.- ");
     System.out.println("7.- ");
     System.out.println("8.- ");
@@ -81,7 +82,29 @@ class EstructuraDatos {
             case 4:
                 break;
             case 5:
-                break;
+                System.out.println("Bienvenido a esta linda hermosa y kawaii");
+                System.out.println("Por favor ingrese cuantos elementos va a comprar");
+                int elementosproducto = 0;
+                elementosproducto = entrada.nextInt();
+                if (elementosproducto > 0 ){
+                    for(int i = 1; i <= elementosproducto;i++ ){
+                        System.out.println("Ingresa el nombre del producto");
+                        String nombreproducto = "";
+                        nombreproducto = entrada.next();
+                        System.out.println("Ingrese el precio");
+                        float precio = 0;
+                        precio = entrada.nextFloat();
+                        System.out.println("Ingrese la cantidad");
+                        int cantidad = 0;
+                        cantidad = entrada.nextInt();
+                        float resultado = 0;
+                        resultado = precio * cantidad;
+                        compra = resultado + compra;
+                    }
+                    System.out.println("El total de la compra es: " + compra);
+                }else{
+                    System.out.println("Ingrese solo positivos");
+                }
             case 6:
                 break;
             case 7:
