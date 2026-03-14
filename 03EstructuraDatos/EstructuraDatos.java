@@ -27,6 +27,8 @@ class EstructuraDatos {
         Scanner entrada = new Scanner(System.in);
         char letrarepetir;
         float compra = 0;
+        double descuentobono= 0;
+        float temperatura = 0;
    // aqui van los objetos
 
    // aqui va el menu
@@ -52,6 +54,20 @@ class EstructuraDatos {
 
         switch (opcion){
             case 1:
+                System.out.println("Ingrese su edad");
+                int edad = entrada.nextInt();
+                System.out.println("Ingrese su pago (se aplicara el bono)");
+                double pago = entrada.nextFloat();
+                if (edad >= 60){
+                    System.out.println("Tiene un bono del 45%");
+                    descuentobono = pago * 0.45;
+                }else if (edad < 18){
+                    System.out.println("Tiene un bono del 25%");
+                    descuentobono = pago * 0.25;
+                }else {
+                    System.out.println("No tiene bono");
+                }
+                System.out.println("El pago final con bono es: " + descuentobono);
                 break;
             case 2:
                 // convertir decimal a binario 
@@ -70,15 +86,23 @@ class EstructuraDatos {
                     guardarbinario = "1" + guardarbinario;
                 }
                 numbinario = (int)numbinario/2;
-            }
-        }else if(numbinario == 0){
-            guardarbinario = "0";
-        }else{
-            guardarbinario = "No se puede convertir ese numero, solo acepta positivos";
-        }
-        System.out.println("El numero convertido a binario es: " + guardarbinario);
+                }
+                }else if(numbinario == 0){
+                guardarbinario = "0";
+                }else{
+                guardarbinario = "No se puede convertir ese numero, solo acepta positivos";
+                }
+                System.out.println("El numero convertido a binario es: " + guardarbinario);
             case 3:
-                break;
+                System.out.println("Ingrese la temperatura");
+                temperatura = entrada.nextFloat();
+                    System.out.println("Ingrese la unidad de la temperatura ( C, F, K");
+                    char unidad = entrada.next().charAt
+                    (0);
+                    System.out.println("Ingrese a que unidad desea convertir ( C, F, K");
+                    char unidadconvertir = entrada.next().charAt
+                    (0);
+
             case 4:
                 break;
             case 5:
