@@ -31,13 +31,13 @@ class EstructuraDatos {
 
    // aqui va el menu
     do {
-    System.out.println("1.- ");
-    System.out.println("2.- Converitr numeros binarios");
-    System.out.println("3.- ");
-    System.out.println("4.- ");
-    System.out.println("5.-Tienda Kawaii ");
-    System.out.println("6.- ");
-    System.out.println("7.- ");
+    System.out.println("1.- Bono de descuento por edad");
+    System.out.println("2.- Convertir numeros binarios");
+    System.out.println("3.- Temperaturas ");
+    System.out.println("4.- Contar positivos y negativos");
+    System.out.println("5.-Tienda");
+    System.out.println("6.- Calcular area y perimetro");
+    System.out.println("7.-");
     System.out.println("8.- ");
     System.out.println("9.- ");
     System.out.println("10.- ");
