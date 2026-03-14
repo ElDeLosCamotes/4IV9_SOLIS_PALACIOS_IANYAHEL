@@ -28,7 +28,25 @@ class EstructuraDatos {
         char letrarepetir;
         float compra = 0;
         double descuentobono= 0;
-        float temperatura = 0;
+        double temperatura = 0;
+        double resultadotemperatura = 0;
+        int[] numero = new int[10];
+        int positivos = 0;
+        int negativos = 0;
+        double radio = 0;
+        double areacirculo = 0;
+        double ladocuadrado = 0;
+        double areacuadrado = 0;
+        float ladorectangulo = 0;
+        float baserectangulo = 0;
+        float arearectangulo = 0;
+        float basetriangulo = 0;
+        float alturatriangulo = 0;
+        float areatriangulo = 0;
+        float ladoPentagono = 0;
+        float apotemaPentagono = 0;
+        float areaPentagono = 0;
+        float perimetroPentagono = 0;
    // aqui van los objetos
 
    // aqui va el menu
@@ -93,17 +111,53 @@ class EstructuraDatos {
                 guardarbinario = "No se puede convertir ese numero, solo acepta positivos";
                 }
                 System.out.println("El numero convertido a binario es: " + guardarbinario);
+                break;
             case 3:
                 System.out.println("Ingrese la temperatura");
                 temperatura = entrada.nextFloat();
-                    System.out.println("Ingrese la unidad de la temperatura ( C, F, K");
+                    System.out.println("Ingrese la unidad de la temperatura (C, F, K)");
                     char unidad = entrada.next().charAt
                     (0);
-                    System.out.println("Ingrese a que unidad desea convertir ( C, F, K");
+                    System.out.println("Ingrese a que unidad desea convertir (C, F, K)");
                     char unidadconvertir = entrada.next().charAt
                     (0);
-
+                    if (unidad == 'C' && unidadconvertir == 'F'){
+                        resultadotemperatura = (temperatura * 9/5) + 32;
+                        System.out.println("La temperatura convertida es: " + resultadotemperatura + " F");
+                    }else if (unidad == 'C' && unidadconvertir == 'K'){
+                        resultadotemperatura = temperatura + 273.15;
+                        System.out.println("La temperatura en Kelvin es:" + resultadotemperatura + " K");
+                    }else if (unidad == 'F' && unidadconvertir == 'C'){
+                        resultadotemperatura = (temperatura - 32) * 5/9;
+                        System.out.println("La temperatura convertida es: " + resultadotemperatura + " C");
+                    }else if ( unidad == 'F' && unidadconvertir == 'K'){
+                        resultadotemperatura = (temperatura - 32) * 5/9 + 273.15;
+                        System.out.println("La temperatura convertida es: " + resultadotemperatura + " K");
+                    }else if ( unidad == 'K' && unidadconvertir == 'C') {
+                        resultadotemperatura = temperatura - 273.15;
+                        System.out.println("La temperatura convertida es: " + resultadotemperatura + " C");
+                    }else if ( unidad == 'K' && unidadconvertir == 'F') {
+                        resultadotemperatura = (temperatura - 273.15) * 9/5 + 32;
+                        System.out.println("La temperatura convertida es: " + resultadotemperatura + " F");
+                    }else {
+                        System.out.println("Ingrese una unidad valida");
+                    }
+                    
+                    break;
             case 4:
+                for(int i = 0; i < numero.length; i++ ){
+                    System.out.println("Ingrese un numero (0 para finalizar)");
+                    numero[i] = entrada.nextInt();
+                    if (numero[i] == 0){
+                        break;
+                    }else if (numero[i] > 0){
+                        positivos++;
+                    }else {
+                        negativos++;
+                    }
+                }   
+                System.out.println("Numero de positivos: " + positivos);
+                System.out.println("Numero de negativos: " + negativos);
                 break;
             case 5:
                 System.out.println("Bienvenido a esta linda hermosa y kawaii");
@@ -129,8 +183,52 @@ class EstructuraDatos {
                 }else{
                     System.out.println("Ingrese solo positivos");
                 }
-            case 6:
                 break;
+            case 6:
+                System.out.println("Ingrese la fiugra deseada (1.- Circulo, 2.- Cuadrado, 3.- Rectangulo, 4.- Triangulo, 5.- Pentagono)");
+                int figura = entrada.nextInt();
+                switch (figura) {
+                    case 1:
+                        System.out.println("Ingrese el radio del circulo");
+                        radio = entrada.nextFloat();
+                        areacirculo = Math.PI * Math.pow(radio, 2);
+                        System.out.println("El area del circulo es: " + areacirculo);
+                        break;
+                    case 2:
+                        System.out.println("Ingrese el lado del cuadrado");
+                        ladocuadrado = entrada.nextFloat();
+                        areacuadrado = Math.pow(ladocuadrado, 2);
+                        System.out.println("El area del cuadrado es: " + areacuadrado);
+                        break;
+                    case 3:
+                        System.out.println("Ingresa la base del rectangulo");
+                        baserectangulo = entrada.nextFloat();
+                        System.out.println("Ingrese el lado ( o altura) del rectangulo");
+                        ladorectangulo = entrada.nextFloat();
+                        arearectangulo = baserectangulo * ladorectangulo;
+                        System.out.println("El area del rectangulo ess:" + arearectangulo);
+                        break;
+                    case 4:
+                        System.out.println("Ingrese la base del triangulo");
+                        basetriangulo = entrada.nextFloat();
+                        System.out.println("Ingrese la altura del triangulo");
+                        alturatriangulo = entrada.nextFloat();
+                        areatriangulo = (basetriangulo * alturatriangulo) /2;
+                        System.out.println("El area del triangulo es:" + areatriangulo);
+                        break;
+                    case 5:
+                        System.out.println("Ingrese el lado del pentagono");
+                        ladoPentagono = entrada.nextFloat();
+                        perimetroPentagono = ladoPentagono * 5;
+                        System.out.println("Ingrese el apotema del pentagono");
+                        apotemaPentagono = entrada.nextFloat();
+                        areaPentagono = (perimetroPentagono * apotemaPentagono) /2;
+                        System.out.println("El area del pentagono es: " + areaPentagono);
+                        break;
+                    default:
+                        System.out.println("Ingrese un numero valido");
+                        break;
+                }
             case 7:
                 break;
             case 8:
