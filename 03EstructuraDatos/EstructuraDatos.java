@@ -46,7 +46,6 @@ class EstructuraDatos {
         float basetriangulo = 0;
         float alturatriangulo = 0;
         float areatriangulo = 0;
-        double SuperrficieLCilindro = 0;
         double Baseunocilindro = 0;
         double areaCilindro = 0;
         double Basedosclindro = 0;
@@ -225,7 +224,7 @@ class EstructuraDatos {
                         System.out.println("El area del triangulo es:" + areatriangulo);
                         break;
                     case 5:
-                        System.out.println("Ingrese la base uno del circulo");
+                        System.out.println("Ingrese la base uno del cilindro");
                         Baseunocilindro = entrada.nextFloat();
                         System.out.println("Ingresa la base dos del clindro");
                         Basedosclindro = entrada.nextFloat();
