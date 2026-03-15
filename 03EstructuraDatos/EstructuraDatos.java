@@ -25,6 +25,9 @@ class EstructuraDatos {
      //aqui van las variables
         int opcion;
         Scanner entrada = new Scanner(System.in);
+        double pago = 0;
+        int edad = 0;
+        char socios;
         char letrarepetir;
         float compra = 0;
         double descuentobono= 0;
@@ -43,10 +46,10 @@ class EstructuraDatos {
         float basetriangulo = 0;
         float alturatriangulo = 0;
         float areatriangulo = 0;
-        float ladoPentagono = 0;
-        float apotemaPentagono = 0;
-        float areaPentagono = 0;
-        float perimetroPentagono = 0;
+        double SuperrficieLCilindro = 0;
+        double Baseunocilindro = 0;
+        double areaCilindro = 0;
+        double Basedosclindro = 0;
    // aqui van los objetos
 
    // aqui va el menu
@@ -73,19 +76,24 @@ class EstructuraDatos {
         switch (opcion){
             case 1:
                 System.out.println("Ingrese su edad");
-                int edad = entrada.nextInt();
-                System.out.println("Ingrese su pago (se aplicara el bono)");
-                double pago = entrada.nextFloat();
-                if (edad >= 60){
-                    System.out.println("Tiene un bono del 45%");
-                    descuentobono = pago * 0.45;
-                }else if (edad < 18){
-                    System.out.println("Tiene un bono del 25%");
-                    descuentobono = pago * 0.25;
+                edad = entrada.nextInt();
+                System.out.println("Ingrese su pago ");
+                pago = entrada.nextFloat();
+                if (edad > 65){
+                    System.out.println("Tiene un bono del 40%");
+                    descuentobono = pago * 0.40;
+                }else if (edad < 21){
+                    System.out.println("Ingrese si es socio (s/n)");
+                    socios = entrada.next().charAt(0);
+                    if(socios == 's'){
+                        System.out.println("Tiene un bono del 45%");
+                        descuentobono = pago * 0.45;
+                    }
                 }else {
                     System.out.println("No tiene bono");
+                    descuentobono = pago;
                 }
-                System.out.println("El pago final con bono es: " + descuentobono);
+                System.out.println("El pago final con/sin bono es: " + descuentobono);
                 break;
             case 2:
                 // convertir decimal a binario 
@@ -185,7 +193,7 @@ class EstructuraDatos {
                 }
                 break;
             case 6:
-                System.out.println("Ingrese la fiugra deseada (1.- Circulo, 2.- Cuadrado, 3.- Rectangulo, 4.- Triangulo, 5.- Pentagono)");
+                System.out.println("Ingrese la fiugra deseada (1.- Circulo, 2.- Cuadrado, 3.- Rectangulo, 4.- Triangulo, 5.- Cilindro)");
                 int figura = entrada.nextInt();
                 switch (figura) {
                     case 1:
@@ -217,13 +225,13 @@ class EstructuraDatos {
                         System.out.println("El area del triangulo es:" + areatriangulo);
                         break;
                     case 5:
-                        System.out.println("Ingrese el lado del pentagono");
-                        ladoPentagono = entrada.nextFloat();
-                        perimetroPentagono = ladoPentagono * 5;
-                        System.out.println("Ingrese el apotema del pentagono");
-                        apotemaPentagono = entrada.nextFloat();
-                        areaPentagono = (perimetroPentagono * apotemaPentagono) /2;
-                        System.out.println("El area del pentagono es: " + areaPentagono);
+                        System.out.println("Ingrese la base uno del circulo");
+                        Baseunocilindro = entrada.nextFloat();
+                        System.out.println("Ingresa la base dos del clindro");
+                        Basedosclindro = entrada.nextFloat();
+                        areaCilindro = 2 * Math.PI * (Baseunocilindro * Basedosclindro);
+                        System.out.println("El area del cilindro es: " + areaCilindro);
+
                         break;
                     default:
                         System.out.println("Ingrese un numero valido");
