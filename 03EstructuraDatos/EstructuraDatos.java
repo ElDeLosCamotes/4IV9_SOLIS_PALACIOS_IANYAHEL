@@ -49,6 +49,7 @@ class EstructuraDatos {
         double Baseunocilindro = 0;
         double areaCilindro = 0;
         double Basedosclindro = 0;
+        int n1= 0;
    // aqui van los objetos
 
    // aqui va el menu
@@ -59,7 +60,7 @@ class EstructuraDatos {
     System.out.println("4.- Contar positivos y negativos");
     System.out.println("5.-Tienda");
     System.out.println("6.- Calcular area y perimetro");
-    System.out.println("7.-");
+    System.out.println("7.-Tabla Multiplicar");
     System.out.println("8.- ");
     System.out.println("9.- ");
     System.out.println("10.- ");
@@ -240,12 +241,26 @@ class EstructuraDatos {
                 //Tabla de Multiplicar 
 
                 for (int n = 0; n <= 10; n++) {
-                    System.out.println(n + " " + (n*10 + " "  + (n*100) + " " + (n*1000)));
+
+                    System.out.println(" | " + n + " " + " | " + (n*10 + " "  + " | " + (n*100) + " " + " | " + (n*1000)));
                 }
                 break;
             case 8:
                 break;
             case 9:
+                // Vamos a realizar un cuadrado magico 
+                System.out.println("Vamos a realizar el dibujo de un cuadrado magico");
+                System.out.println("Ingrese el tamaño del cuadrado");
+                n1 = entrada.nextInt();
+                if(n1 >= 1 && n1 <= 20){
+                    for (int i = 1; i <= n1; i++){
+                        for (int j = 1; j < n1; j++) {
+                            
+                        }
+                    }
+                }else{
+                    System.out.println("Porfavor solo ingrese valores entre el 1 y el 20");
+                }
                 break;
             case 10:
                 break;
