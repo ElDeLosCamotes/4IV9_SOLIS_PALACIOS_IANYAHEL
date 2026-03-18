@@ -7,13 +7,12 @@
     4.- Realizar un programa para contar numero de positivos y negativos de una serie de numeros
     5.- Desarrollar una tienda para agregrar productos y precios
     6.- Desarrollar un programa para calclar el area y perimetro de 5 diferentes figuras
-    7.- Desarrollar una tabla avr de q se me ocurre
-    8.- Desarrollar un programa para calcular un factorial con recursividad
-    9.- Vamos a hacer dibujitos wiiii
+    7.- Desarrollar una tabla multiplicar
+    8.- Desarrollar un programa para calcular un factorial 
+    9.- Vamos a hacer dibujitos wiiii ( Triangulo equilatero o rombo)
     10.- Desarrolla una figura hueca
-    11.- Realizar algunos patrones
     12.- Realizar un diamante
-    13.- Desarrollar una calculadora basica + - * / 
+    13.- Desarrollar una calculadora basica + - * / para n numeros
 
 */
 import java.util.Scanner;
@@ -62,7 +61,7 @@ class EstructuraDatos {
     System.out.println("6.- Calcular area y perimetro");
     System.out.println("7.-Tabla Multiplicar");
     System.out.println("8.- ");
-    System.out.println("9.- ");
+    System.out.println("9.- Cuadradito Magiquito ");
     System.out.println("10.- ");
     System.out.println("11.- ");
     System.out.println("12.- ");
@@ -255,8 +254,9 @@ class EstructuraDatos {
                 if(n1 >= 1 && n1 <= 20){
                     for (int i = 1; i <= n1; i++){
                         for (int j = 1; j < n1; j++) {
-                            
+                            System.out.println(" * ");
                         }
+                    System.out.println("");
                     }
                 }else{
                     System.out.println("Porfavor solo ingrese valores entre el 1 y el 20");
