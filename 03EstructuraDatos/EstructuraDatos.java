@@ -237,6 +237,11 @@ class EstructuraDatos {
                         break;
                 }
             case 7:
+                //Tabla de Multiplicar 
+
+                for (int n = 0; n <= 10; n++) {
+                    System.out.println(n + " " + (n*10 + " "  + (n*100) + " " + (n*1000)));
+                }
                 break;
             case 8:
                 break;
