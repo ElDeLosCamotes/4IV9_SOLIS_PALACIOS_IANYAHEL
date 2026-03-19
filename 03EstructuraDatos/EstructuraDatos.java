@@ -49,6 +49,7 @@ class EstructuraDatos {
         double areaCilindro = 0;
         double Basedosclindro = 0;
         int n1= 0;
+        int numfactorial = 0;
    // aqui van los objetos
 
    // aqui va el menu
@@ -60,13 +61,12 @@ class EstructuraDatos {
     System.out.println("5.-Tienda");
     System.out.println("6.- Calcular area y perimetro");
     System.out.println("7.-Tabla Multiplicar");
-    System.out.println("8.- ");
+    System.out.println("8.-Calcular un factorial ");
     System.out.println("9.- Cuadradito Magiquito ");
-    System.out.println("10.- ");
-    System.out.println("11.- ");
-    System.out.println("12.- ");
-    System.out.println("13.- ");
-    System.out.println("14.- Salir ");
+    System.out.println("10.- Figura Hueca ");
+    System.out.println("11.- Diamante ");
+    System.out.println("12.- Calculadora Basica ");
+    System.out.println("13.- Salir ");
 
     opcion = entrada.nextInt();
 
@@ -238,13 +238,25 @@ class EstructuraDatos {
                 }
             case 7:
                 //Tabla de Multiplicar 
-
+                System.out.println("Tabla del  10, 100 y 1000");
+                System.out.println("-------------------------------------------------");
                 for (int n = 0; n <= 10; n++) {
-
-                    System.out.println(" | " + n + " " + " | " + (n*10 + " "  + " | " + (n*100) + " " + " | " + (n*1000)));
+                    System.out.print(" | " + n + " " + " | ");
+                    System.out.print(" | " + (n*10) + " " + " | ");
+                    System.out.print(" | " + (n*100) + " " + " | ");
+                    System.out.println(" | " + (n*1000) + " " + " | ");
+                    System.out.println("-------------------------------------------------");
                 }
-                break;
+                break; 
             case 8:
+                // Factorial
+                System.out.println("Ingrese un numero para calcular su factorial");
+                numfactorial = entrada.nextInt();
+                for ( int i = numfactorial - 1; i > 0; i--){
+                    numfactorial = numfactorial * i;
+                    
+                }
+                System.out.println("El factorial es: " + numfactorial);
                 break;
             case 9:
                 // Vamos a realizar un cuadrado magico 
@@ -253,8 +265,8 @@ class EstructuraDatos {
                 n1 = entrada.nextInt();
                 if(n1 >= 1 && n1 <= 20){
                     for (int i = 1; i <= n1; i++){
-                        for (int j = 1; j < n1; j++) {
-                            System.out.println(" * ");
+                        for (int j = 0; j < n1; j++) {
+                            System.out.print(" * ");
                         }
                     System.out.println("");
                     }
@@ -269,10 +281,10 @@ class EstructuraDatos {
             case 12:
                 break;
             case 13:
-                break;
-            case 14:
+                System.out.println(" Vuelva Pronto... ");
                 break;
             default:
+                System.out.println("Ingrese una opcion valida");
                 break;
         }
     System.out.println("Desas Repetir el programa escribe s o S para si");
