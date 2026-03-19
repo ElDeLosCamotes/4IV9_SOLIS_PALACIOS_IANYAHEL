@@ -11,7 +11,7 @@
     8.- Desarrollar un programa para calcular un factorial 
     9.- Vamos a hacer dibujitos wiiii ( Triangulo equilatero o rombo)
     10.- Desarrolla una figura hueca
-    12.- Realizar un diamante
+    12.- Realizar un diamanteeeee
     13.- Desarrollar una calculadora basica + - * / para n numeros
 
 */
