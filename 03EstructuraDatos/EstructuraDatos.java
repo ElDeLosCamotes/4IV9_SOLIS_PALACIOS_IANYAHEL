@@ -50,6 +50,7 @@ class EstructuraDatos {
         double Basedosclindro = 0;
         int n1= 0;
         int numfactorial = 0;
+        int hueco = 0;
    // aqui van los objetos
 
    // aqui va el menu
@@ -275,6 +276,25 @@ class EstructuraDatos {
                 }
                 break;
             case 10:
+                // Figura Hueca
+                System.out.println("Ingrese el tamaño de la figura hueca");
+                hueco = entrada.nextInt();
+                if (hueco >= 3 && hueco <=20){
+                    for (int i = 1; i <= hueco; i++){
+                        for (int j = 1; j <= hueco; j++){
+                            if (i == 1 || i == hueco || j == 1 || j == hueco){
+                                System.out.print("*");
+                            }else {
+                                System.out.print(" ");
+                            }
+                        }
+                    System.out.println("");
+                    }
+                }else {
+                    System.out.println("Ingrese Valores entre el 3 y el 20");
+                }
+                System.out.println(" ");
+
                 break;
             case 11:
                 break;
