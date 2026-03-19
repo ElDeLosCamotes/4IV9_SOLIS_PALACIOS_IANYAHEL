@@ -51,6 +51,14 @@ class EstructuraDatos {
         int n1= 0;
         int numfactorial = 0;
         int hueco = 0;
+        int diamante = 0;
+        int operacion = 0;
+        int cantidadnumeros = 0;
+        int suma = 0;
+        int resta = 0;
+        int multiplicacion = 1;
+        int division = 1;
+
    // aqui van los objetos
 
    // aqui va el menu
@@ -297,8 +305,78 @@ class EstructuraDatos {
 
                 break;
             case 11:
+                // Diamante
+                System.out.println("Ingrese el tamaño del diamante");
+                diamante = entrada.nextInt();
+                if (diamante >= 1 && diamante <= 20){
+                    for ( int i = 1; i <= diamante; i++){
+                        for (int j = 1; j <= diamante - i; j++){
+                            System.out.print(" ");
+
+                        }
+                        for (int k = 1; k <= (2*i) -1; k++){
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                }
                 break;
             case 12:
+                // Calculadora Basica
+                System.out.println("Ingrese el numero de la operacion a realizar");
+                System.out.println("1.- Suma");
+                System.out.println("2.- Resta");
+                System.out.println("3.- Multiplicacion");
+                System.out.println("4.- Division");
+                operacion = entrada.nextInt();
+                boolean errordivision = false;
+                System.out.println("Ingrese la cantidad de numeros ");
+                cantidadnumeros = entrada.nextInt();
+                int[] numeroscalculadora = new int[cantidadnumeros];
+                for (int i = 0; i < cantidadnumeros; i++){
+                    System.out.println("Ingrese el numero " + (i+1));
+                    numeroscalculadora[i]=entrada.nextInt();
+
+                }
+                switch (operacion) {
+                    case 1:
+                        for (int i = 0; i < cantidadnumeros; i++){
+                            suma = suma + numeroscalculadora[i];
+                        }
+                        System.out.println("El resultado de la suma es: " + suma);
+                        break;
+                    case 2:
+                        resta = numeroscalculadora[0];
+                        for (int i = 1; i < cantidadnumeros; i++){
+                            resta = resta - numeroscalculadora[i];
+                        }
+                        System.out.println("El resultado de la resta es: " + resta);
+                        break;
+                    case 3:
+                        for (int i = 0; i < cantidadnumeros; i++){
+                            multiplicacion = multiplicacion * numeroscalculadora[i];
+                        }
+                        System.out.println("El resultado de la multiplicacion es: " + multiplicacion);
+                        break;
+                    case 4:
+                        division = numeroscalculadora[0];
+                        for (int i = 1; i < cantidadnumeros; i++){
+                            if (numeroscalculadora[i] != 0){
+                                division = division / numeroscalculadora[i];
+                            }else {
+                                System.out.println("Indefinición, no se puede dividir entre 0");
+                                errordivision = true;
+                                break;
+                            }
+                        }
+                        if (errordivision == true){
+                            break;
+                        }
+                        System.out.println("El resultado de la division es: " + division);
+                    default:
+                        break;
+                }
+
                 break;
             case 13:
                 System.out.println(" Vuelva Pronto... ");
