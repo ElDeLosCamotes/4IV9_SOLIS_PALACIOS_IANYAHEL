@@ -1,0 +1,5 @@
+public class Examen {
+        public static void main(String[] args) {
+            System.out.println("Hola, este es el examen de programación");
+        }
+    }
