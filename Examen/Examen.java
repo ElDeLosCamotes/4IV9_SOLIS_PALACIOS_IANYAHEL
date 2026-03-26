@@ -125,9 +125,24 @@ public class Examen {
                     if (numCuartos > 1 && numCuartos < 5) {
                         for (int i = 0; i < numCuartos; i++) {
                             System.out.println("Ingrese el largo: ");
+                            try {
                             largo[i] = entrada.nextDouble();
+                            } catch (Exception e) {
+                                System.out.println("Ingrese un número.");
+                                entrada.nextLine();
+                                i--;
+                                continue;
+                            }
+
                             System.out.println("Ingrese el ancho: ");
+                            try {
                             ancho[i] = entrada.nextDouble();
+                            } catch (Exception e) {
+                                System.out.println("Ingrese un número.");
+                                entrada.nextLine();
+                                i--;
+                                continue;
+                            }
                             System.out.println("Ingrese el tipo de piso (1-3): ");
                             tipoPiso[i] = entrada.nextInt();
                             switch (tipoPiso[i]) {
