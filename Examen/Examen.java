@@ -151,6 +151,7 @@ public class Examen {
                         System.out.println("Total general de la compra: $" + (costoCuarto[0] + costoCuarto[1] + costoCuarto[2] + costoCuarto[3] + costoCuarto[4]));
                         }else {
                             System.out.println("Número de cuartos no válido. Debe ser un número entero positivo mayor a 1 pero menor de 5.");
+                            break;
                         }
                         System.out.println("¿Desea realizar la compra? (s/n)");
                         char respuestaCompra = entrada.next().charAt(0);
