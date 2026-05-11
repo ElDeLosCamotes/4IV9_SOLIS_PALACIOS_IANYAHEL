@@ -7,7 +7,7 @@ public class Figura {
     Scanner sc = new Scanner(System.in);
     int opcion;
     char letra;
-    double lado, altura, area, perimetro, base;
+    double lado, altura, area, perimetro, base, radio;
     boolean esValido = false;
 
 
@@ -150,24 +150,180 @@ switch (opcion) {
             System.out.println("El área del triángulo isósceles es: " + area);
             System.out.println("El perímetro del triángulo isósceles es: " + perimetro);
                 break;
+    case 3:
+        //formula P = Lado1 + Lado2 + Lado3
+        //A = (b*a) / 2
+            esValido = false;
+                do{
+                System.out.println("Ingresa la base del triangulo");
+                try{
+                    if(sc.hasNextDouble()){
+                        base = sc.nextDouble();
+                        if(base > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("La base debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+
+            esValido = false;
+            do{
+                System.out.println("Ingresa la altura del triangulo");
+                try{
+                    if(sc.hasNextDouble()){
+                        altura = sc.nextDouble();
+                        if(altura > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("La altura debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+
+            area = (base * altura) / 2;
+            perimetro = base + altura + Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
+            System.out.println("El área del triángulo escaleno es: " + area);
+            System.out.println("El perímetro del triángulo escaleno es: " + perimetro);
+                break;
 }
 
 }
 
 public void calcularCuadrado(){
+esValido = false;
+                do{
+                System.out.println("Ingresa el lado del cuadrado");
+                try{
+                    if(sc.hasNextDouble()){
+                        lado = sc.nextDouble();
+                        if(lado > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("El lado debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+            area = Math.pow(lado, 2);
+            perimetro = 4 * lado;
+            System.out.println("El área del cuadrado es: " + area);
+            System.out.println("El perímetro del cuadrado es: " + perimetro);
 
 }
 
 public void calcularCirculo(){
-
+esValido = false;
+                do{
+                System.out.println("Ingresa el radio del círculo");
+                try{
+                    if(sc.hasNextDouble()){
+                        radio = sc.nextDouble();
+                        if(radio > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("El radio debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+            area = Math.PI * Math.pow(radio, 2);
+            perimetro = 2 * Math.PI * radio;
+            System.out.println("El área del círculo es: " + area);
+            System.out.println("El perímetro del círculo es: " + perimetro);
 }
 
 public void calcularRectangulo(){
-
+esValido = false;
+                do{
+                System.out.println("Ingresa el lado del rectángulo");
+                try{
+                    if(sc.hasNextDouble()){
+                        lado = sc.nextDouble();
+                        if(lado > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("El lado debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+            esValido = false;
+                do{
+                System.out.println("Ingresa la altura del rectángulo");
+                try{
+                    if(sc.hasNextDouble()){
+                        altura = sc.nextDouble();
+                        if(altura > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("La altura debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+            area = lado * altura;
+            perimetro = 2 * (lado + altura);
+            System.out.println("El área del rectángulo es: " + area);
+            System.out.println("El perímetro del rectángulo es: " + perimetro);
 }
 
 public void calcularCubo(){
-
+esValido = false;
+                do{
+                System.out.println("Ingresa el lado del cubo");
+                try{
+                    if(sc.hasNextDouble()){
+                        lado = sc.nextDouble();
+                        if(lado > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("El lado debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+            area = 6 * Math.pow(lado, 2);
+            perimetro = 12 * lado;
+            System.out.println("El área del cubo es: " + area);
+            System.out.println("El perímetro del cubo es: " + perimetro);
 }
 
 
