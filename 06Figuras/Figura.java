@@ -19,13 +19,12 @@ public class Figura {
             System.out.println("2. Cuadrado");
             System.out.println("3. Círculo");
             System.out.println("4. Rectángulo");
-            System.out.print("5. Cubo ");
+            System.out.println("5. Cubo ");
             opcion = sc.nextInt();
 
             switch (opcion) {
                 case 1:
                     calcularTriangulo();
-
                     break;
                 case 2:
                     calcularCuadrado();
@@ -45,10 +44,113 @@ public class Figura {
             System.out.println("Si desa repetir el programa, presione 's' o 'S'.");
             letra = sc.next().charAt(0);
 
-        } while (letra != 's' && letra != 'S' );
+        } while (letra == 's' || letra == 'S' );
     }
 public void calcularTriangulo(){
+System.out.println("Área y Perímetro del Triángulo");
+System.out.println("Que tipo de triángulo deseas calcular?");
+System.out.println("1. Triángulo Equilátero");
+System.out.println("2. Triángulo Isósceles");
+System.out.println("3. Triángulo Escaleno");
+opcion = sc.nextInt();
+switch (opcion) {
+    case 1:
+        //formula P = 3 * Lado
+        //A = (b * a) / 2
+            esValido = false;
+                do{
+                System.out.println("Ingresa la base del triangulo");
+                try{
+                    if(sc.hasNextDouble()){
+                        base = sc.nextDouble();
+                        if(base > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("La base debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
 
+            esValido = false;
+            do{
+                System.out.println("Ingresa la altura del triangulo");
+                try{
+                    if(sc.hasNextDouble()){
+                        altura = sc.nextDouble();
+                        if(altura > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("La altura debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+
+            area = (base * altura) / 2;
+            perimetro = 3 * base;
+            System.out.println("El área del triángulo equilátero es: " + area);
+            System.out.println("El perímetro del triángulo equilátero es: " + perimetro);
+                break;
+    case 2:
+        //formula P = 2 * (Lado1 + Lado2)
+        //A = (b * a) / 2
+            esValido = false;
+                do{
+                System.out.println("Ingresa la base del triangulo");
+                try{
+                    if(sc.hasNextDouble()){
+                        base = sc.nextDouble();
+                        if(base > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("La base debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+
+            esValido = false;
+            do{
+                System.out.println("Ingresa la altura del triangulo");
+                try{
+                    if(sc.hasNextDouble()){
+                        altura = sc.nextDouble();
+                        if(altura > 0){
+                            esValido = true;
+                        }else{
+                            System.out.println("La altura debe ser un numero positivo");
+                        }
+                    }else{
+                        System.out.println("Ingrese unicamente numeros");
+                        sc.next();
+                    }
+                }catch(Exception e){
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }while(!esValido);
+
+            area = (base * altura) / 2;
+            perimetro = 2 * (base + altura);
+            System.out.println("El área del triángulo isósceles es: " + area);
+            System.out.println("El perímetro del triángulo isósceles es: " + perimetro);
+                break;
+}
 
 }
 
