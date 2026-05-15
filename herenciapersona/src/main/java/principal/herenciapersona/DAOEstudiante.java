@@ -89,9 +89,26 @@ public class DAOEstudiante {
         }
     }
     
-    public void eliminarEstudiante (){
-        
+    public void eliminarEstudiante() {
+    int boletaBuscar = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el número de boleta del estudiante a eliminar:"));
+    boolean encontrado = false;
+    for (int i = 0; i < x; i++) {
+        if (obj[i] != null && obj[i].getNumBoleta() == boletaBuscar) {
+            // Desplazar elementos para llenar el hueco (opcional, o solo nullificar)
+            for (int j = i; j < x - 1; j++) {
+                obj[j] = obj[j + 1];
+            }
+            obj[x - 1] = null;  // Limpiar el último
+            x--;  // Reducir contador
+            JOptionPane.showMessageDialog(null, "Estudiante eliminado.");
+            encontrado = true;
+            break;
+        }
     }
+    if (!encontrado) {
+        JOptionPane.showMessageDialog(null, "Estudiante no encontrado.");
+    }
+}
     
     public void actualizarEstudiante (){
         int boletaBuscar = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero de boleta del estudiante a actualizar"));
@@ -102,7 +119,7 @@ public class DAOEstudiante {
                 int nuevaBoleta = Integer.parseInt(JOptionPane.showInputDialog("Nueva boleta (actual: " + obj[i].getNumBoleta()+ "):"));
                 String nuevoNom = JOptionPane.showInputDialog("Nuevo nombre (actual: " + obj[i].getNombre()+ "):");
                 int nuevaEdad = Integer.parseInt(JOptionPane.showInputDialog("Nueva edad (actual: " + obj[i].getEdad()+ "):"));
-                char nuevoGen = JOptionPane.showInputDialog("Nueva boleta (actual: " + obj[i].getGenero()+ "):").charAt(0);
+                char nuevoGen = JOptionPane.showInputDialog("Nuevo Genero (actual: " + obj[i].getGenero()+ "):").charAt(0);
                 
                 //creamos un nuevo objeto pa guardarlo
                 obj[i] = new Estudiante (nuevaBoleta,nuevoNom, nuevaEdad, nuevoGen);
