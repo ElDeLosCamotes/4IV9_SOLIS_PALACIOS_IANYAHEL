@@ -1,0 +1,10 @@
+numBoleta=2025090382
+nombre=Ian
+edad=17
+genero=M
+finRegistro
+numBoleta=2025090381
+nombre=Yahel
+edad=16
+genero=M
+finRegistro

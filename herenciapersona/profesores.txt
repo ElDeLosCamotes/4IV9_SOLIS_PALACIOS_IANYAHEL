@@ -1,0 +1,6 @@
+numEmpleado=1212
+nombre=Jaime
+edad=28
+genero=M
+departamento=12
+finRegistro

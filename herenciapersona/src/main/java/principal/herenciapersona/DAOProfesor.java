@@ -1,6 +1,11 @@
 package principal.herenciapersona;
 
 import javax.swing.JOptionPane;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class DAOProfesor {
     
@@ -8,6 +13,7 @@ public class DAOProfesor {
     int x = 0;
     
     void menu() {
+        cargarProfesores("profesores.txt");
         String var = "si";
         String mensaje = "";
         
@@ -109,4 +115,59 @@ public class DAOProfesor {
             JOptionPane.showMessageDialog(null, "Profesor no encontrado.");
         }
     }
+    
+    public void guardarProfesores(String archivo) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo))) {
+        for (int i = 0; i < x; i++) {
+            writer.write("numEmpleado=" + obj[i].getNumEmpleado());
+            writer.newLine();
+            writer.write("nombre=" + obj[i].getNombre());
+            writer.newLine();
+            writer.write("edad=" + obj[i].getEdad());
+            writer.newLine();
+            writer.write("genero=" + obj[i].getGenero());
+            writer.newLine();
+            writer.write("departamento=" + obj[i].getDepartamento());
+            writer.newLine();
+            writer.write("finRegistro");
+            writer.newLine();
+        }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al guardar profesores: " + e.getMessage());
+    }
+}
+    
+    public void cargarProfesores(String archivo) {
+    try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+        String linea;
+        int numEmpleado = 0;
+        String nombre = "";
+        int edad = 0;
+        char genero = ' ';
+        String departamento = "";
+        while ((linea = reader.readLine()) != null) {
+            if (linea.isEmpty()) continue;
+            if (linea.equals("finRegistro")) {
+                if (x < obj.length) {
+                    obj[x] = new Profesor(numEmpleado, nombre, edad, genero, departamento);
+                    x++;
+                }
+                continue;
+            }
+            String[] partes = linea.split("=", 2);
+            if (partes.length < 2) continue;
+            String clave = partes[0];
+            String valor = partes[1];
+            switch (clave) {
+                case "numEmpleado": numEmpleado = Integer.parseInt(valor); break;
+                case "nombre": nombre = valor; break;
+                case "edad": edad = Integer.parseInt(valor); break;
+                case "genero": genero = valor.charAt(0); break;
+                case "departamento": departamento = valor; break;
+            }
+        }
+    } catch (IOException e) {
+        // Archivo no existe: se crea cuando guardes.
+    }
+}
 }

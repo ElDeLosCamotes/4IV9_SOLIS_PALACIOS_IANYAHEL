@@ -3,6 +3,11 @@ package principal.herenciapersona;
 
 
 import javax.swing.JOptionPane;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class DAOEstudiante {
     
@@ -14,6 +19,7 @@ public class DAOEstudiante {
     
     //metodo del menu para el programa
     void menu(){
+        cargarEstudiantes("estudiantes.txt");
         String var = "si";
         String mensaje = "";
         
@@ -134,5 +140,56 @@ public class DAOEstudiante {
             JOptionPane.showMessageDialog(null, "Estudiante no Encontrado");
         }
     }
+    
+    public void guardarEstudiantes(String archivo) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo))) {
+        for (int i = 0; i < x; i++) {
+            writer.write("numBoleta=" + obj[i].getNumBoleta());
+            writer.newLine();
+            writer.write("nombre=" + obj[i].getNombre());
+            writer.newLine();
+            writer.write("edad=" + obj[i].getEdad());
+            writer.newLine();
+            writer.write("genero=" + obj[i].getGenero());
+            writer.newLine();
+            writer.write("finRegistro");
+            writer.newLine();
+        }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al guardar estudiantes: " + e.getMessage());
+    }
+}
+    
+    public void cargarEstudiantes(String archivo) {
+    try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+        String linea;
+        int numBoleta = 0;
+        String nombre = "";
+        int edad = 0;
+        char genero = ' ';
+        while ((linea = reader.readLine()) != null) {
+            if (linea.isEmpty()) continue;
+            if (linea.equals("finRegistro")) {
+                if (x < obj.length) {
+                    obj[x] = new Estudiante(numBoleta, nombre, edad, genero);
+                    x++;
+                }
+                continue;
+            }
+            String[] partes = linea.split("=", 2);
+            if (partes.length < 2) continue;
+            String clave = partes[0];
+            String valor = partes[1];
+            switch (clave) {
+                case "numBoleta": numBoleta = Integer.parseInt(valor); break;
+                case "nombre": nombre = valor; break;
+                case "edad": edad = Integer.parseInt(valor); break;
+                case "genero": genero = valor.charAt(0); break;
+            }
+        }
+    } catch (IOException e) {
+
+    }
+}
     
 }
